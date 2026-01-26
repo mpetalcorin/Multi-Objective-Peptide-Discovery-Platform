@@ -2,8 +2,6 @@
 A unified, one-file peptide discovery platform that uses active learning to optimise affinity, stability, and solubility, and exports CRO-ready synthesis and assay artifacts.
 A single, end-to-end **peptide discovery platform demo** that runs iterative **Design → Predict → Propose → Measure → Learn** cycles for **multi-objective peptide optimisation** across **Affinity**, **Stability**, and **Solubility**, and automatically exports **CRO-ready assay artifacts** (candidate lists, synthesis order sheets, 96-well plate maps, and a ranked screening decision report).
 
-This repository is built to feel like a real translational pipeline, not just a model benchmark.
-
 ## Summary
 
 Peptide discovery often stalls at the interface between computational design and experimental execution, where candidate prioritisation, manufacturability constraints, and assay logistics must be integrated into a single, decision-ready workflow. Here we present a unified, one-file proof-of-concept peptide design platform that performs closed-loop Design, Predict, Propose, Measure, and Learn cycles using multi-objective optimisation across affinity, stability, and solubility. The platform combines sequence featurisation, ensemble RandomForest surrogates with uncertainty, Bayesian-style acquisition (UCB, EI, and Pareto-weighted EHVI-lite), diversity constraints, and explicit manufacturability liabilities including deamidation hotspots, Asp–Pro cleavage risk, oxidation-sensitive residues, cysteine liabilities, extreme charge, and aggregation proxies. In simulation mode, an oracle generates assay-like measurements across iterative rounds, producing learning curves and evolving Pareto landscapes. In real-assay mode, the platform ingests primary dose–response or single-point screening data, computes replicate quality flags, estimates plate performance using the Z′-factor, fits 4-parameter logistic curves without SciPy, and proposes the next synthesis batch. Outputs include CRO-ready candidate lists, synthesis order sheets, and automated 96-well plate maps, enabling immediate translation from computational prioritisation to experimental execution. This work demonstrates an integrated template for peptide discovery pipelines that treat model predictions as laboratory decisions, rather than standalone scores, supporting practical multi-parameter optimisation and reproducible assay planning.
@@ -407,6 +405,11 @@ This is an iterative dataset where proposals depend on prior measured rounds. St
   - best observed peptides
   - key parameters (acq choice, constraints)
   - artifact filenames for auditability
+
+## Cite this work
+If you use this code, figures, or ideas, please cite:
+
+**Petalcorin, M. I. R.** (2026). *Unified Proof-of-Concept Peptide Design Platform (Simulation + Assay-Ingestion + CRO Artifacts)*. GitHub repository.
 
 ## How to Reproduce the Dataset
 ### Simulation Mode
